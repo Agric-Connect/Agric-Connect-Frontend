@@ -9,8 +9,9 @@ const LoginForm = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <div className="flex w-full max-w-5xl shadow-lg rounded-lg overflow-hidden">
-                <div className="hidden lg:block w-1/2 bg-cover bg-center" style={{ backgroundImage: `url(${loginImage})` }}></div>
+            {/* <div className="flex w-full max-w-5xl shadow-lg rounded-lg overflow-hidden"> */}
+                {/* <div className="lg:block w-1/2 h-full bg-cover bg-center" style={{ backgroundImage: `url(${loginImage})` }}></div> */}
+                <img className='w-1/2 h-full hidden lg:block' src= {loginImage} alt="login image" />
                 <div className="w-full lg:w-1/2 p-8 lg:p-12 bg-white overflow-y-auto" style={{ maxHeight: '100vh' }}>
                     <h2 className="text-2xl font-bold text-primary mb-4 text-center">Login to AgriConnect</h2>
                     
@@ -60,7 +61,7 @@ const LoginForm = () => {
                         </button>
                     </div>
                 </div>
-            </div>
+            {/* </div> */}
         </div>
     );
 };
