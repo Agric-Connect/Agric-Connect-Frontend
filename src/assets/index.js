@@ -10,7 +10,12 @@ import hero4 from "./images/hero4.jpg"
 import hero5 from "./images/hero5.jpg"
 import recentPost1 from "./images/recentPost1.jpg"
 import recentPost2 from "./images/recentPost2.jpg"
+import certification1 from "./images/certification1.jpg"
+import certification2 from "./images/certification2.jpg"
 
 
 
-export {signupImage, googleIcon, logo, loginImage, recoverPasswordImage, hero1, hero2, hero3, hero4, hero5, recentPost1, recentPost2 }
+export {
+    signupImage, googleIcon, logo, loginImage, recoverPasswordImage, hero1, hero2, hero3, hero4, hero5, recentPost1, recentPost2,
+    certification1, certification2, 
+}
