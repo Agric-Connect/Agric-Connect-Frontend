@@ -1,4 +1,3 @@
-// src/components/Sidebar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { NAVLINKS, SOCIAL_LINKS } from './constants/index'; 
@@ -19,7 +18,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
             </div>
 
             {/* Navigation Links */}
-            <nav className="flex-1 p-4 space-y-4 overflow-y-auto">
+            <nav className="flex-1 p-1 space-y-4 overflow-y-auto">
                 {NAVLINKS.map(({ icon, text, link }) => (
                     <Link 
                         key={link} 

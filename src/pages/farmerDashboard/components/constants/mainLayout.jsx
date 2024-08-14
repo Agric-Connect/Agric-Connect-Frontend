@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from './sideBar'; // Adjust the import path as necessary
+import Sidebar from './sideBar'; 
 
 const MainLayout = ({ children }) => {
     return (

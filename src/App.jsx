@@ -15,12 +15,25 @@ import SalesTrends from './pages/farmerDashboard/pages/salesTrends';
 import ErrorBoundary from './pages/farmerDashboard/error/errorBoundry';
 import CreateListingsWrapper from './pages/farmerDashboard/pages/wrapper/createListingsWrapper';
 import BrowseListingsWrapper from './pages/farmerDashboard/pages/wrapper/browseListingsWrapper';
+import BuyerDashboardLayout from './pages/buyerDasboard/layout';
+import BuyerHome from './pages/buyerDasboard/pages/buyerHome';
+import BuyerBrowseListings from './pages/buyerDasboard/pages/buyerBrowseListings';
+import SavedListings from './pages/buyerDasboard/pages/savedListings';
+import Orders from './pages/buyerDasboard/pages/orders';
+import ViewOrder from './pages/buyerDasboard/pages/viewOrder';
+import BuyerMessages from './pages/buyerDasboard/pages/buyerMessages';
+import Wishlist from './pages/buyerDasboard/pages/wishList';
+import BuyerProfileManagement from './pages/buyerDasboard/pages/buyerProfileManagement';
+import BuyerSettings from './pages/buyerDasboard/pages/buyerSettings';
+import Support from './pages/buyerDasboard/pages/support';
 
 const router = createBrowserRouter([
   { path: '/register', element: <RegistrationForm /> },
   { path: '/login', element: <LoginForm /> },
   { path: '/recover-password', element: <RecoverPasswordForm /> },
   { path: '/', element: <LandingPage /> },
+
+  { path: 'buyer/orders/:id', element: <ViewOrder /> },
 
   {
     path: '/farmer-dashboard',
@@ -32,14 +45,33 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: 'profile', element: <ProfileManagement /> },
-      { path: 'browse', element: <BrowseListingsWrapper /> }, 
+      { path: 'browse', element: <BrowseListingsWrapper /> },
       { path: 'create', element: <CreateListingsWrapper /> },
       { path: 'messages', element: <Messages /> },
       { path: 'settings', element: <Settings /> },
       { path: 'earnings', element: <Earnings /> },
       { path: 'overview', element: <SalesTrends /> }
     ]
-  }
+  },
+
+  {
+    path: '/buyer',
+    element: (
+      <BuyerDashboardLayout />
+    ),
+    children: [
+      { index: true, element: <BuyerHome /> },
+      { path: 'browse-listings', element: <BuyerBrowseListings /> },
+      { path: 'saved-listings', element: <SavedListings /> },
+      { path: 'orders', element: <Orders /> },
+      { path: 'messages', element: <BuyerMessages />},
+      { path: 'wishlist', element: <Wishlist />},
+      { path: 'profile', element: <BuyerProfileManagement />},
+      { path: 'settings', element: <BuyerSettings />},
+      { path: 'support', element: <Support />}
+    ]
+  },
+
 ]);
 
 function App() {
