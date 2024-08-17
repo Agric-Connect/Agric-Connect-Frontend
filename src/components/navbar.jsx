@@ -18,7 +18,9 @@ const Navbar = () => {
                 <div className="hidden md:flex items-center flex-grow justify-center space-x-6">
                     <Link to="/" className="text-tColor hover:text-primary transition duration-300 ease-in-out text-[18px] font-bold">Home</Link>
                     <Link to="/about" className="text-tColor hover:text-primary transition duration-300 ease-in-out text-[18px] font-bold">About</Link>
-                    <Link to="/services" className="text-tColor hover:text-primary transition duration-300 ease-in-out text-[18px] font-bold">Services</Link>
+                    <Link to="/produce" className="text-tColor hover:text-primary transition duration-300 ease-in-out text-[18px] font-bold">Produce</Link>
+                    <Link to="/blog" className="text-tColor hover:text-primary transition duration-300 ease-in-out text-[18px] font-bold">Services</Link>
+                    <Link to="/services" className="text-tColor hover:text-primary transition duration-300 ease-in-out text-[18px] font-bold">Blog</Link>
                     <Link to="/contact" className="text-tColor hover:text-primary transition duration-300 ease-in-out text-[18px] font-bold">Contact</Link>
                 </div>
                 <div className="hidden md:flex items-center space-x-6">

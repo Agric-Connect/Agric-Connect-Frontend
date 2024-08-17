@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { googleIcon, loginImage } from '../../assets';
 
 const LoginForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [isSubmitting, setIsSubmiting] = useState(false);
+    const navigate = useNavigate();
     const onSubmit = data => console.log(data);
+
+    
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">

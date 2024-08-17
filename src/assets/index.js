@@ -22,11 +22,21 @@ import carrot from "./images/carrot.jpg"
 import corn from "./images/corn.jpg"
 import potato from "./images/potato.jpg"
 import rice from "./images/rice.jpg"
+import avocado from "./images/avocado.png"
+import banana from "./images/banana.png"
+import carrot2 from "./images/carrot2.png"
+import cucumber from "./images/cucumber.png"
+import fish from "./images/fish.png"
+import grapes from "./images/grapes.png"
+import strawberry from "./images/strawberry.png"
+import corn2 from "./images/corn2.png"
+import whatWeDo from "./images/whoWeAre.jpg"
+
 
 
 
 export {
     signupImage, googleIcon, logo, loginImage, recoverPasswordImage, hero1, hero2, hero3, hero4, hero5, recentPost1, recentPost2,
     certification1, certification2, peanut, wheat, almond, apple, orange, cassava, carrot, corn, potato, rice, 
-    
+    whatWeDo, avocado, banana, carrot2, cucumber, fish, grapes, strawberry, corn2, 
 }
