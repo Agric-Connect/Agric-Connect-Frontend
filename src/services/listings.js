@@ -1,41 +1,42 @@
-import apiClient from '../apiClient';
+import {apiClient} from "./config"
+
 
 // Fetch all listings
-export const fetchListings = () => {
+export const apiFetchListings = () => {
     return apiClient.get('/listings');
 };
 
 // Fetch a specific listing by ID
-export const fetchListingById = (id) => {
+export const apiFetchListingById = (id) => {
     return apiClient.get(`/listings/${id}`);
 };
 
 // Create a new listing
-export const createListing = (listingData) => {
+export const apiCreateListing = (listingData) => {
     return apiClient.post('/listings', listingData);
 };
 
 // Update an existing listing by ID
-export const updateListing = (id, listingData) => {
+export const apiUpdateListing = (id, listingData) => {
     return apiClient.patch(`/listings/${id}`, listingData);
 };
 
 // Delete a listing by ID
-export const deleteListing = (id) => {
+export const apiDeleteListing = (id) => {
     return apiClient.delete(`/listings/${id}`);
 };
 
 // Fetch all saved listings
-export const fetchSavedListings = () => {
+export const apiFetchSavedListings = () => {
     return apiClient.get('/savedlistings');
 };
 
 // Save a listing by ID
-export const saveListing = (id) => {
+export const apiSaveListing = (id) => {
     return apiClient.post(`/savedlistings/${id}`);
 };
 
 // Remove a saved listing by ID
-export const removeSavedListing = (id) => {
+export const apiRemoveSavedListing = (id) => {
     return apiClient.delete(`/savedlistings/${id}`);
 };

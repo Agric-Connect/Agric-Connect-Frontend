@@ -13,33 +13,32 @@ const ProfileManagementForm = ({ onSave }) => {
     const [certifications, setCertifications] = useState([]);
 
     const handleCoverPhotoChange = (e) => {
-        setCoverPhoto(URL.createObjectURL(e.target.files[0]));
+        setCoverPhoto(e.target.files[0]);
     };
 
     const handleProfilePicChange = (e) => {
-        setProfilePic(URL.createObjectURL(e.target.files[0]));
+        setProfilePic(e.target.files[0]);
     };
 
     const handleCertificationsChange = (e) => {
         const files = Array.from(e.target.files);
-        setCertifications(files.map(file => ({
-            name: file.name,
-            image: URL.createObjectURL(file)
-        })));
+        setCertifications(files);
     };
 
     const handleSave = () => {
-        onSave({
-            coverPhoto,
-            profilePic,
-            name,
-            contact,
-            location,
-            dob,
-            sex,
-            bio,
-            certifications
+        const formData = new FormData();
+        if (coverPhoto) formData.append('coverPhoto', coverPhoto);
+        if (profilePic) formData.append('profilePic', profilePic);
+        formData.append('name', name);
+        formData.append('contact', contact);
+        formData.append('location', location);
+        formData.append('dob', dob);
+        formData.append('sex', sex);
+        formData.append('bio', bio);
+        certifications.forEach((file, index) => {
+            formData.append(`certifications[${index}]`, file);
         });
+        onSave(formData);
     };
 
     return (
@@ -57,7 +56,7 @@ const ProfileManagementForm = ({ onSave }) => {
                     <div className="flex flex-col items-center">
                         <div className="w-full h-48 bg-gray-200 flex items-center justify-center overflow-hidden rounded-lg">
                             {coverPhoto ? (
-                                <img src={coverPhoto} alt="Cover" className="w-full h-full object-cover" />
+                                <img src={URL.createObjectURL(coverPhoto)} alt="Cover" className="w-full h-full object-cover" />
                             ) : (
                                 <span className="text-gray-400">No Cover Photo</span>
                             )}
@@ -72,7 +71,7 @@ const ProfileManagementForm = ({ onSave }) => {
                     <div className="flex items-center space-x-4">
                         <div className="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
                             {profilePic ? (
-                                <img src={profilePic} alt="Profile" className="w-full h-full object-cover" />
+                                <img src={URL.createObjectURL(profilePic)} alt="Profile" className="w-full h-full object-cover" />
                             ) : (
                                 <span className="text-gray-400">No Image</span>
                             )}
@@ -155,7 +154,7 @@ const ProfileManagementForm = ({ onSave }) => {
                         <div className="mt-2 flex flex-wrap gap-4">
                             {certifications.map((cert, index) => (
                                 <div key={index} className="flex items-center space-x-2">
-                                    <img src={cert.image} alt={cert.name} className="w-16 h-16 object-cover rounded border" />
+                                    <img src={URL.createObjectURL(cert)} alt={cert.name} className="w-16 h-16 object-cover rounded border" />
                                     <p className="text-sm">{cert.name}</p>
                                 </div>
                             ))}
@@ -167,7 +166,7 @@ const ProfileManagementForm = ({ onSave }) => {
                 <div className="flex space-x-4">
                     <button
                         onClick={handleSave}
-                        className="bg-primary text-white px-4 py-2 rounded hover:bg-primary"
+                        className="bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark"
                     >
                         Save
                     </button>

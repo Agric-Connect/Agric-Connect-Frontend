@@ -7,7 +7,7 @@ const Pagelaoder = () => {
         visible={true}
         height="80"
         width="80"
-        color="#8e44ad"
+        color="#5B8C51"
         radius="9"
         ariaLabel="three-dots-loading"
         wrapperStyle={{}}

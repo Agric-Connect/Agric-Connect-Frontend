@@ -1,33 +1,33 @@
-import apiClient from './apiClient';
+import {apiClient} from './config';
 
 // Farmers' Profiles
 
-export const getFarmerProfiles = () => {
+export const apiGetFarmerProfiles = () => {
     return apiClient.get('/farmers/profiles');
 };
 
-export const createFarmerProfile = (profileData) => {
+export const apiCreateFarmerProfile = (profileData) => {
     return apiClient.post('/farmers/profiles', profileData);
 };
 
-export const updateFarmerProfile = (id, profileData) => {
+export const apiUpdateFarmerProfile = (id, profileData) => {
     return apiClient.patch(`/farmers/profiles/${id}`, profileData);
 };
 
-export const deleteFarmerProfile = (id) => {
+export const apiDeleteFarmerProfile = (id) => {
     return apiClient.delete(`/farmers/profiles/${id}`);
 };
 
 // Buyers' Profiles
 
-export const getBuyerProfiles = () => {
+export const apiGetBuyerProfiles = () => {
     return apiClient.get('/buyers/profiles');
 };
 
-export const createBuyerProfile = (profileData) => {
+export const apiCreateBuyerProfile = (profileData) => {
     return apiClient.post('/buyers/profiles', profileData);
 };
 
-export const updateBuyerProfile = (id, profileData) => {
+export const apiUpdateBuyerProfile = (id, profileData) => {
     return apiClient.patch(`/buyers/profiles/${id}`, profileData);
 };

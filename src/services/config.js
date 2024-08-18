@@ -37,7 +37,6 @@ apiClient.interceptors.request.use(
         return config;
     },
     (error) => {
-        // Handle request errors here
         return Promise.reject(error);
     }
 );
@@ -52,7 +51,7 @@ apiClient.interceptors.response.use(
         // Handle 401 Unauthorized error
         if (error.response.status === 401) {
             clearDetails();
-            window.location.replace('/signin');
+            window.location.replace('/login');
         }
         // Handle 404 Not Found error
         if (error.response.status === 404) {

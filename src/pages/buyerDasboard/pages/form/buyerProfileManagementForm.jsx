@@ -18,6 +18,21 @@ const BuyerProfileManagementForm = ({ profileData, onSave, onCancel }) => {
     }));
   };
 
+  const handleFileChange = (e) => {
+    const { name, files } = e.target;
+    if (files.length > 0) {
+      const file = files[0];
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: reader.result,
+        }));
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleSave = () => {
     onSave(formData);
   };
@@ -32,7 +47,7 @@ const BuyerProfileManagementForm = ({ profileData, onSave, onCancel }) => {
           type="file"
           name="profilePicture"
           className="border p-2 w-full"
-          onChange={(e) => handleChange(e)}
+          onChange={handleFileChange}
         />
       </div>
       
