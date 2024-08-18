@@ -28,14 +28,17 @@ import BuyerSettings from "./pages/buyerDasboard/pages/buyerSettings";
 import Support from "./pages/buyerDasboard/pages/support";
 import ProduceSection from "./pages/landingPage/produceSection";
 import ProduceDetail from "./pages/landingPage/produceDetail";
+import LogoutPage from "./pages/auth/logoutPage";
 
 const router = createBrowserRouter([
   { path: "/register", element: <RegistrationForm /> },
   { path: "/login", element: <LoginForm /> },
+  { path: "/logout", element: <LogoutPage /> },
   { path: "/recover-password", element: <RecoverPasswordForm /> },
   { path: "/", element: <LandingPage /> },
 
   { path: "buyer/orders/:id", element: <ViewOrder /> },
+
 
   {
     path: "/farmer-dashboard",

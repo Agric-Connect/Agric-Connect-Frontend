@@ -2,12 +2,15 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { recoverPasswordImage } from '../../assets';
+import Navbar from '../../components/navbar';
 
 const RecoverPasswordForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
 
     return (
+        <>
+        <Navbar />
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
             <div className="flex w-full max-w-5xl shadow-lg rounded-lg overflow-hidden">
                 <div className="hidden lg:block w-1/2 bg-cover bg-center" style={{ backgroundImage: `url(${recoverPasswordImage})` }}></div>
@@ -38,6 +41,7 @@ const RecoverPasswordForm = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 
